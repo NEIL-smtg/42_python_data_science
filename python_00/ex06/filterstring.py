@@ -1,23 +1,20 @@
 import sys
-import string
-
-
-def ft_filterstring(strs, size):
-    return [element for element in strs if len(element) > size]
+import ft_filter as fl
 
 
 if __name__ == "__main__":
     try:
         ac = len(sys.argv)
-        assert ac != 2, "AssertionError: The arguments are bad."
+        assert ac == 3, "AssertionError: The arguments are bad."
 
         size = int(sys.argv[2])
         strs = sys.argv[1].split()
 
-        assert any(ch in sys.argv[1] for ch in string.punctuation) is False,\
-               "AssertionError: The arguments are bad."
+        for ch in sys.argv[1]:
+            assert ch.isprintable() and (ch.isalnum() or ch.isspace()), \
+                "AssertionError: The arguments are bad."
 
-        res = ft_filterstring(strs, size)
+        res = list(fl.ft_filter(lambda element: len(element) > size, strs))
         if (res is None):
             print("[]")
         else:
