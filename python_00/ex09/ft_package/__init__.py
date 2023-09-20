@@ -6,3 +6,4 @@ from .count_in_list import count_in_list
     - if this file is empty, it will make all functions from other modules
       become available when this package is imported
 """
+_ = count_in_list

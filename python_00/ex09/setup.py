@@ -2,6 +2,13 @@ from setuptools import setup, find_packages
 
 """
     python setup.py sdist bdist_wheel
+
+    sdist - build tar.gz file (source distribution package),
+    contains complete source code and any
+    neccesssary file that required to build the package
+
+    bdist_wheel -  build .whl file, more efficient and faster
+    contain precompile code, preferred for prebuilt package
 """
 
 setup(
@@ -14,7 +21,4 @@ setup(
     license='MIT',
     packages=find_packages(),
     classifiers='',
-    include_dirs='',
-    zip_safe=False,
-    long_description="README.md",
 )

@@ -1,6 +1,3 @@
-def count_in_list(list, str) -> int:
-    count = 0
-    for element in list:
-        if element == str:
-            count += 1
-    return count
+def count_in_list(lst: list, s: str) -> int:
+    """lst.count counts occurrence of s in list"""
+    return lst.count(s)

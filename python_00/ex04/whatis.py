@@ -7,10 +7,8 @@ try:
     errMsg = "AssertionError: More than 1 argument provided."
     assert (len(sys.argv) == 2), errMsg
     num = int(sys.argv[1])
-    if (num % 2 == 0):
-        print("I'm Even.")
-    else:
-        print("I'm Odd.")
+    msg = "I'm Even" if (num % 2 == 0) else "I'm odd"
+    print(msg)
 except ValueError:
     print("ValueError : consists of not number")
 except AssertionError as msg:
