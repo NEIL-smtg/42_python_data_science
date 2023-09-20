@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 
 
 def plotting(imgarr: np.array):
-    plt.imshow(imgarr[:, :, 0], cmap='grey')
+    plt.imshow(imgarr[:, :, 0], cmap='gray')
     plt.show()
 
 

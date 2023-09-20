@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 
 
 def plotImg(imgarr: np.array):
-    plt.imshow(imgarr[:, :, 0], cmap='grey')
+    plt.imshow(imgarr[:, :, 0], cmap='gray')
     plt.show()
 
 
@@ -34,8 +34,8 @@ def zoom(path: str):
         grayscale_img = np.mean(crop_img, axis=2, keepdims=True)\
             .astype(np.uint8)
 
-        print(grayscale_img)
         print("New shape after slicing: ", grayscale_img.shape)
+        print(grayscale_img)
         plotImg(grayscale_img)
     except AssertionError as msg:
         print(msg)
