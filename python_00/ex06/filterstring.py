@@ -3,6 +3,11 @@ import ft_filter as fl
 
 
 if __name__ == "__main__":
+    """
+    lambda = function that has no name
+    throw error when argument is invalid
+    filter the arguments by checking strlen of argv
+    """
     try:
         ac = len(sys.argv)
         assert ac == 3, "AssertionError: The arguments are bad."

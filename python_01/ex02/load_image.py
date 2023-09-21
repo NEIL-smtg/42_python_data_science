@@ -3,6 +3,11 @@ from PIL import Image
 
 
 def ft_load(path: str) -> np.array:
+    """
+    throw error when unable to open img
+    otherwise return img data array
+    """
+
     try:
         img = Image.open(path)
         img.show()

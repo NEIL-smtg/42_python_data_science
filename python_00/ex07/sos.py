@@ -2,6 +2,10 @@ import sys
 
 
 def main():
+    """
+    Throw error when contains not alpha, digits and space,
+    otherwise just print
+    """
 
     NESTED_MORSE = {
         " ": "/ ",

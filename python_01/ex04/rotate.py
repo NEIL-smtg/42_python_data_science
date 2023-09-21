@@ -5,11 +5,21 @@ from matplotlib import pyplot as plt
 
 
 def plotting(imgarr: np.array):
+    """
+    0 to specify using column 0 of color axis
+    changing color mapping into gray to achieve
+    grayscale effect
+    """
+
     plt.imshow(imgarr[:, :, 0], cmap='gray')
     plt.show()
 
 
 def rotate():
+    """
+    throw error when img not loaded
+    get grayscale arr and plot
+    """
     try:
         img_file = "animal.jpeg"
         err_msg = "AssertionError: Unable to rotate"

@@ -1,17 +1,16 @@
-
 def all_thing_is_obj(object: any) -> int:
-    if (type(object) is list):
-        print("List: ", end="")
-    elif (type(object) is tuple):
-        print("Tuple: ", end="")
-    elif (type(object) is set):
-        print("Set: ", end="")
-    elif (type(object) is dict):
-        print("Dict: ", end="")
-    elif (type(object) is str):
-        print("John is in the kitchen: ", end="")
+    obj_type = (list, tuple, set, dict, str)
+
+    if type(object) not in obj_type:
+        print('Type not found')
+    elif type(object) is str:
+        print(object, 'is in the kitchen :', str)
+    elif type(object) is list:
+        print('List :', list)
+    elif type(object) is tuple:
+        print('Tuple :', tuple)
+    elif type(object) is set:
+        print('Set :', set)
     else:
-        print("Type not found")
-        return (42)
-    print(type(object))
-    return (42)
+        print('Dict :', dict)
+    return 42

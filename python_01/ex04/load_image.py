@@ -3,6 +3,10 @@ from PIL import Image
 
 
 def ft_get_grayscale(img_arr: np.array) -> np.array:
+    """
+    crop img into 400x400 and apply offset to move the
+    cropping area into rocket's head
+    """
     height = len(img_arr)
     width = len(img_arr[1])
 
@@ -25,6 +29,10 @@ def ft_get_grayscale(img_arr: np.array) -> np.array:
 
 
 def ft_load_and_rotate(path: str) -> np.array:
+    """
+    load image and rotate 90 degrees to achieve
+    transpose img and return the image array
+    """
     try:
         img = Image.open(path)
         print(np.array(img).shape)

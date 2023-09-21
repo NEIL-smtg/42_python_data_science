@@ -3,6 +3,12 @@ import numpy as np
 
 def give_bmi(height: list[int | float], weight: list[int | float]) \
         -> list[int | float]:
+    """
+    throw error when list len is different or not containing
+    int or float (issubdtype)
+
+    zip both list and do the calculation together
+    """
 
     height_arr = np.array(height)
     weight_arr = np.array(weight)
@@ -25,4 +31,7 @@ def give_bmi(height: list[int | float], weight: list[int | float]) \
 
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
+    """
+    store the boolean into the list using list comprehension
+    """
     return [e > limit for e in bmi]

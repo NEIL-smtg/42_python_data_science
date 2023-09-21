@@ -3,6 +3,10 @@ from PIL import Image
 
 
 def imgShow(array):
+    """
+    show the img
+    """
+
     img = Image.fromarray(array)
     img.show()
 
@@ -10,8 +14,6 @@ def imgShow(array):
 def ft_invert(array) -> np.array:
     """Inverts the color of the image received
     """
-    print('The shape of image is: ', array.shape)
-    print(array)
     inv = np.invert(array)
     imgShow(inv)
     return inv
@@ -19,6 +21,7 @@ def ft_invert(array) -> np.array:
 
 def ft_red(array) -> np.array:
     """Turns color of the image received into red
+    setting the green and blue channel into 0
     """
     tinted_red = np.copy(array)
     tinted_red[:, :, 1] = 0
@@ -29,8 +32,8 @@ def ft_red(array) -> np.array:
 
 def ft_green(array) -> np.array:
     """Turns color of the image received into grey
+    setting the red and blue channel into 0
     """
-    print('The shape of image is: ', array.shape)
     tinted_green = np.copy(array)
     tinted_green[:, :, 0] = 0
     tinted_green[:, :, 2] = 0
@@ -39,9 +42,9 @@ def ft_green(array) -> np.array:
 
 
 def ft_blue(array) -> np.array:
-    """Turns color of the image received into blue
+    """Turns color of the image received into grey
+    setting the red and green channel into 0
     """
-    print('The shape of image is: ', array.shape)
     array[:, :, 0] = 0
     array[:, :, 1] = 0
     imgShow(array)
@@ -50,8 +53,9 @@ def ft_blue(array) -> np.array:
 
 def ft_grey(array) -> np.array:
     """Turns color of the image received into grey
+    by multiplying rgb channel with luminance value
+    respectively
     """
-    print('The shape of image is: ', array.shape)
     grey = np.dot(array[..., :3], [0.2989, 0.5870, 0.1140])
     imgShow(grey)
     return grey
