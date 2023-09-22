@@ -4,10 +4,19 @@ import pandas as pd
 
 
 def filtering_data(data: pd.DataFrame) -> pd.DataFrame:
+    """
+    return data that is belong to 1900 column
+    """
     return (data.loc[:, '1900'])
 
 
 def get_xlabel(val, _):
+    """
+    using dic to store value
+    and return using val as map
+    second arg is pos, using _
+    to indicate unused parameter
+    """
     labels = {
         300: '300',
         1000: '1k',
@@ -17,7 +26,10 @@ def get_xlabel(val, _):
 
 
 def plotting(gdp, expectancy):
-
+    """
+    set scale of xaxis as logarithm since its not a uniform scale
+    get current axis and format the axis
+    """
     plt.title('1900')
     plt.xlabel('Gross domestic product')
     plt.ylabel('Life Expectancy')
@@ -30,6 +42,9 @@ def plotting(gdp, expectancy):
 
 
 def projection_life():
+    """
+    load files and plot
+    """
     try:
         err_msg = 'AssertionError: File not loaded'
         expectancy_file = 'life_expectancy_years.csv'

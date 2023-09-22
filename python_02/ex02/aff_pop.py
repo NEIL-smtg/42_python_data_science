@@ -22,6 +22,10 @@ def clean_data(data: list) -> list:
 
 
 def get_ylabels(val, _):
+    """
+    using dict to store formatter
+    and return the value using val as key
+    """
     labels = {
         2e8: '20M',
         4e8: '40M',
