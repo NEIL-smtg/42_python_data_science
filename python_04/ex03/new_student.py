@@ -4,6 +4,7 @@ from dataclasses import dataclass, field
 
 
 def generate_id() -> str:
+    """generating random str"""
     return "".join(random.choices(string.ascii_lowercase, k=15))
 
 
