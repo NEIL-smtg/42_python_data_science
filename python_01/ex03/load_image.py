@@ -12,8 +12,8 @@ def ft_load(path: str) -> np.array:
         img = Image.open(path)
         arr = np.array(img)
         return arr
-    except FileNotFoundError as msg:
-        print(msg)
+    except FileNotFoundError:
+        print('FileNotFoundError: Unable to open ' + path)
 
 
 # if __name__ == "__main__":

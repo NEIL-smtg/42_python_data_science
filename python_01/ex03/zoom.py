@@ -4,35 +4,31 @@ from matplotlib import pyplot as plt
 
 
 def plotImg(imgarr: np.array):
-    """
-    show the image using imshow
+    """show the image using imshow
     0 is to specify using column 0 in that dimension for color
     cmap = color map, its default color mapping is viridis
-    change it to gray to apply grayscale effect
-    """
+    change it to gray to apply grayscale effect"""
+
     plt.imshow(imgarr[:, :, 0], cmap='gray')
     plt.show()
 
 
-def zoom(path: str):
-    """
-    -throw error when unable to open img
-
+def zoom():
+    """Throw error when unable to open img
     -mid_h, mid_w to find the center coordinate of the img
-    then calculate top left, right, bottom left right
-
+     then calculate top left, right, bottom left right
     -by adding and subtracting 200 to achieve 400x400 img scale
     -offset xy is to move the cropping area to aim at rocket's head
-
     -using axis 2 of the image array to find the mean of rgb values
     and trim 3 columns into 1 just to store 1 value for grayscale and
     setting the type to uint8 (0-255) in case the result will be in
-    decimal point
-    """
+    decimal point"""
 
     try:
+        path = "animal.jpeg"
         img_arr = ft_load(path)
-        assert img_arr is not None, "Unable to zoom."
+        if img_arr is None:
+            raise AssertionError('Unable to zoom.')
 
         print("The shape of image is: ", img_arr.shape)
         print(img_arr)
@@ -61,8 +57,8 @@ def zoom(path: str):
     except AssertionError as msg:
         print(msg)
     except KeyboardInterrupt:
-        print('trl+c pressed..Exiting...')
+        print('\nCtrl+c pressed..Exiting...')
 
 
 if __name__ == "__main__":
-    zoom("animal.jpeg")
+    zoom()
